@@ -14,7 +14,7 @@ namespace FRCScoutingClient {
         /// <summary>
         /// Time Created
         /// </summary>
-        public DateTime TimeEdited;
+        //public DateTime TimeEdited;
         /// <summary>
         /// Actual Data
         /// </summary>
@@ -28,7 +28,7 @@ namespace FRCScoutingClient {
         /// </summary>
         public int Team;
 
-        IPAddress iPAddress;
+        public IPAddress iPAddress;
 
     }
 }

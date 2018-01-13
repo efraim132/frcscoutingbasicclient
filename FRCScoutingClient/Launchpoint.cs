@@ -8,7 +8,7 @@ namespace FRCScoutingClient {
     class Launchpoint {
         public static void Main(string[] args) {
             Client client = new Client();
-            client.run(2000, "Efraim");
+            client.run(2000, "Efraim", 3);
         }
     }
 }
