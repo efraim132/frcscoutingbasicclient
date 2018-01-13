@@ -41,15 +41,16 @@ namespace FRCScoutingClient {
 
                 Data SampleData = new Data();
                 SampleData.Name = "jeff";
-                SampleData.Details = new Dictionary<string, float>();
+                SampleData.Details = new Dictionary<string, double>();
                 SampleData.Details.Add("msg1", 12);
-                SampleData.Competition = 12;
-                SampleData.Team = 13;
-                SampleData.iPAddress = Dns.GetHostEntry(Dns.GetHostName()).AddressList[netAdapter];
+                SampleData.Details.Add("msg2", 13);
+                SampleData.Competition = 1234;
+                SampleData.Team = 2345;
+                //SampleData.iPAddress = Dns.GetHostEntry(Dns.GetHostName()).AddressList[netAdapter];
 
 
                 List<byte> SerializedData = new List<byte>();
-                foreach(byte b in Serialization.encodeData(SampleData) ) {
+                foreach(byte b in Serialization.encodeDataWriter(SampleData) ) {
                     SerializedData.Add(b);
                 }
                 Console.WriteLine("Serialized Data, Adding identifier, Size is {0} bytes", SerializedData.Count);
@@ -65,7 +66,7 @@ namespace FRCScoutingClient {
 
 
             } catch(Exception e ) {
-                throw new ArgumentException("Cannot connect!");
+                throw new ArgumentException("Cannot connect!",e);
             }
 
         }
@@ -101,7 +102,7 @@ namespace FRCScoutingClient {
             string userInput = "";
             string message;
             float val;
-            Dictionary<string, float> Details = new Dictionary<string, float>();
+            Dictionary<string, double> Details = new Dictionary<string, double>();
             while( true ) {
                 Console.WriteLine("Message:");
                 userInput = Console.ReadLine();
@@ -128,7 +129,7 @@ namespace FRCScoutingClient {
             OutputData.Details = Details;
             OutputData.Team = teamNumber;
             // OutputData.TimeEdited = DateTime.Now;
-            OutputData.iPAddress = Dns.GetHostEntry(Dns.GetHostName()).AddressList[netAdapter];
+            //OutputData.iPAddress = Dns.GetHostEntry(Dns.GetHostName()).AddressList[netAdapter];
 
             return OutputData;
         }

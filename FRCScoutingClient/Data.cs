@@ -18,7 +18,7 @@ namespace FRCScoutingClient {
         /// <summary>
         /// Actual Data
         /// </summary>
-        public Dictionary<string, float> Details;
+        public Dictionary<string, double> Details;
         /// <summary>
         /// Competition ID
         /// </summary>
@@ -28,7 +28,7 @@ namespace FRCScoutingClient {
         /// </summary>
         public int Team;
 
-        public IPAddress iPAddress;
+        //public IPAddress iPAddress;
 
     }
 }
